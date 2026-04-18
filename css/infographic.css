@@ -1,0 +1,186 @@
+#head-txt {
+  fill: var(--color-head-bg);
+}
+.info-graphic,
+.info-text {
+  background-color: var(--color-info-bg);
+  padding: 20px 0;
+}
+.info-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  margin: 1.5rem auto 2rem auto;
+  padding: 1rem;
+  max-width: min(100%, 32rem);
+}
+
+#won svg {
+  display: block;
+  height: clamp(220px, 34vh, 280px);
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.info-text h2 {
+  line-height: 3rem;
+  text-align: center;
+  background-color: var(--color-headline-bg);
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+.info-text h3 {
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+.info-text > *:not(:first-child) {
+  margin: 0 clamp(1rem, 10%, 7rem);
+}
+
+/* accordion implementation */
+
+.accordion-steps {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.accordion-steps details {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.accordion-steps details:nth-of-type(2n) {
+  background-color: var(--color-card-bg-inverted);
+}
+
+.accordion-steps summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.accordion-steps .accordion-content {
+  padding: 0 1rem 1rem 1rem;
+}
+
+.accordion-steps .accordion-content p {
+  margin: 0;
+}
+
+/*  */
+
+.info-box {
+  padding: 1.5rem 1rem 0.5rem 1rem;
+  background-color: var(--color-card-bg);
+}
+.info-box:nth-of-type(2n) {
+  background-color: var(--color-card-bg-inverted);
+}
+
+/* Awabs custom infographix */
+
+.info-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto 80px auto;
+  padding: 20px;
+}
+
+.infographic_img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* js main infographic styling */
+#ringtone {
+  cursor: pointer;
+  border: 0;
+  background-color: var(--color-head-bg);
+  color: var(--color-text-inverted);
+  font: inherit;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-links);
+  cursor: pointer;
+}
+#ringtone:hover {
+  background-color: var(--color-link-hover);
+}
+
+#won {
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#won.active {
+  background-color: rgba(246, 146, 32, 0.12);
+  box-shadow: 0 0 0 2px #f69220 inset;
+  border-radius: 12px;
+  transform: scale(1.01);
+}
+
+/* BODY CSS */
+
+/* clickable parts */
+#head,
+#chest {
+  cursor: pointer;
+}
+
+/* keep the base body black */
+/* base state: everything starts black */
+#won svg path {
+  fill: rgb(255, 187, 0);
+  transition:
+    fill 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* lips hidden by default */
+#lips path {
+  opacity: 0;
+}
+
+/* head click -> original SVG head color */
+#head.active-head path {
+  fill: #ed2024;
+}
+
+/* chest click -> original SVG chest color */
+#chest.active-chest .cls-3 {
+  fill: #9e1f63;
+}
+
+#chest.active-chest .cls-2 {
+  fill: #f7941d;
+}
+/* show lips when head is clicked */
+#lips.visible-lips path {
+  opacity: 1;
+  fill: #662d91;
+}
+
+@media (width < 600px) {
+  .info-graphic {
+    margin: 1rem auto 1.5rem auto;
+    padding: 0.75rem;
+    max-width: min(100%, 20rem);
+  }
+
+  #won svg {
+    height: min(32vh, 220px);
+    width: auto;
+    max-width: 100%;
+  }
+}

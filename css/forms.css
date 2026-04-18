@@ -1,0 +1,155 @@
+#webform {
+  background-color: var(--form-background-color);
+}
+
+#form-section,
+#form-summary {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+}
+
+#form-section {
+  display: grid;
+  gap: 1rem;
+}
+
+#form-info p {
+  line-height: 1.4;
+}
+
+#webform {
+  display: grid;
+  gap: 1rem;
+  background-color: transparent;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.4rem;
+}
+
+label,
+legend {
+  font-weight: 600;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-link-bg);
+  border-radius: 4px;
+  background-color: var(--color-card-bg);
+  color: var(--color-text);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+fieldset {
+  border: 1px solid var(--color-link-bg);
+  padding: 0.75rem;
+  border-radius: 4px;
+  display: grid;
+  gap: 0.5rem;
+}
+
+fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+button {
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--color-head-bg);
+  color: var(--color-text-inverted);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-link-bg);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border-color: #8b1e1e;
+}
+
+input:valid,
+select:valid,
+textarea:valid {
+  border-color: var(--color-menu-bg);
+}
+
+#form-summary h2 {
+  line-height: 3rem;
+  text-align: center;
+  background-color: var(--color-head-bg);
+  color: var(--color-text-inverted);
+  padding-top: 5px;
+}
+
+#form-summary article {
+  padding: 1rem 0;
+}
+
+#form-summary p {
+  line-height: 1.5;
+}
+
+@media (width > 600px) {
+  #webform {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #webform .form-group,
+  #webform fieldset,
+  #webform button {
+    grid-column: 1 / -1;
+  }
+}
+
+/* form error */
+
+.form-errors {
+  min-height: 1.5rem;
+  color: #8b1e1e;
+  font-weight: 600;
+}
+
+@media (width > 600px) {
+  #webform .form-note,
+  #webform .form-errors,
+  #webform button {
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,102 @@
+:root,
+:root[data-theme="light"] {
+  /* Background color */
+  --color-bg: #d1c492;
+  --color-accent-yellow: rgb(255, 217, 0);
+
+  /* Header background color */
+  --color-head-bg: #a97000;
+
+  /* Logotype */
+  --color-logotype-bg: #2a2828;
+  --color-text-logotype: #ffffff;
+  --font-logotype-size: 1rem;
+
+  /* Global menu */
+  --color-menu-bg: #2a2828;
+  /* Links */
+  --color-link-bg: #ca9222;
+  --color-link-hover: #fff;
+  --color-link-active: #aa987e;
+  --border-radius-links: 1px;
+
+  /* Headlines (size)*/
+  --font-h1-size: 1rem;
+  --font-h2-size: 1rem;
+  --font-h3-size: 1rem;
+
+  --headline2-size: 1rem;
+  --headline3-size: 1rem;
+  --font-sub1-size: 1rem;
+
+  /* Headlines (color) */
+  --color-headline-bg: #d49624;
+
+  /* Tekst */
+  --color-text: #000;
+  --color-text-inverted: #cdccc4;
+
+  /* Andet tekst */
+  --followup-text-size: 1rem;
+
+  /*  Margins */
+  --margin-head-bottom: 5px;
+
+  /* Borders */
+  --border-radius: 5px;
+
+  /* Cards */
+  --color-card-bg: #e3e1d8;
+  --color-card-bg-inverted: #837b45;
+  --color-cta-card-bg: #7f5d43f6;
+  --color-cta-card-bg-inverted: #c0bfb9;
+
+  /* Fonts & font weights*/
+  --font-family-sans: "Alumni Sans", Arial, sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 300;
+  --font-weight-light: 200;
+
+  /* Infographics background colors*/
+  --color-info-bg: #67573c;
+}
+
+:root[data-theme="dark"] {
+  /* Background color */
+  --color-bg: #141311;
+  --color-accent-yellow: rgb(255, 217, 0);
+
+  /* Header background color */
+  --color-head-bg: #000000;
+
+  /* Logotype */
+  --color-logotype-bg: #000000;
+  --color-text-logotype: #ddd8cf;
+  --font-logotype-size: 1rem;
+
+  /* Global menu */
+  --color-menu-bg: #000000;
+
+  /* Links */
+  --color-link-bg: #3e3936;
+  --color-link-hover: #5a534e;
+  --color-link-active: #736b65;
+  --border-radius-links: 1px;
+
+  /* Headlines (color) */
+  --color-headline-bg: #262220;
+
+  /* Text */
+  --color-text: #f3efe8;
+  --color-text-inverted: #f3efe8;
+
+  /* Cards */
+  --color-card-bg: #22201e;
+  --color-card-bg-inverted: #34302d;
+  --color-cta-card-bg: #4a4440;
+  --color-cta-card-bg-inverted: #6a635c;
+
+  /* Infographics background colors */
+  --color-info-bg: #1b1918;
+}

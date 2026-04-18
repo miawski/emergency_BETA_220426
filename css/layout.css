@@ -1,0 +1,149 @@
+/* LAYOUT FOR MAIN CONTENT */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+p {
+  margin: 0 0 1rem 0;
+  line-height: 1.55;
+}
+
+main {
+  display: grid;
+  row-gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+main > * {
+  margin-inline: clamp(1rem, 4vw, 2rem);
+}
+main {
+  grid-template-rows: min-content min-content 1fr min-content;
+}
+#instruction main {
+  grid-template-rows: min-content min-content min-content 1fr min-content;
+}
+/* LAYOUT FOR HEADER AND FOOTER */
+footer {
+  display: grid;
+  grid-template-columns: clamp(0.75rem, 4vw, 2rem) minmax(0, 1200px) clamp(
+      0.75rem,
+      4vw,
+      2rem
+    );
+}
+
+header {
+  grid-row: 1;
+  display: block;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-inline: clamp(0.75rem, 4vw, 2rem);
+}
+
+footer nav {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  padding: 1rem 0;
+}
+
+header nav > * {
+  flex: 1;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header ul {
+  height: 100%;
+  width: clamp(175px, 50%, 300px);
+}
+
+/* main pg img */
+
+#frontpage .safer_img {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 1.5rem 0;
+}
+
+#frontpage .safer_img section {
+  width: 100%;
+  max-width: 24rem;
+  padding: 0;
+}
+
+#frontpage .safer_img img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+footer ul {
+  display: grid;
+  gap: 0.35rem;
+  justify-content: start;
+  padding-inline: 0.75rem 1rem;
+  margin: 0;
+}
+
+footer li {
+  max-width: 100%;
+}
+
+footer li {
+  max-width: 100%;
+}
+
+footer a {
+  display: inline-block;
+  overflow-wrap: anywhere;
+}
+
+/* LAYOUT FOR SECTIONS */
+
+@media (width > 600px) {
+  #instruction > main,
+  #register > main {
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  .qr {
+    order: 1;
+  }
+
+  h1 {
+    grid-column: 1 / -1;
+  }
+
+  footer nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 1rem;
+  }
+
+  footer ul {
+    display: grid;
+    gap: 0.35rem;
+  }
+}

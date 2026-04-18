@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/burger.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="icon" type="image/svg+xml" href="img/safer_space_LOGO.svg">
+  <title>Emergency Site</title>
+</head>
+
+<body id="register">
+  <header>
+    <nav>
+      <div id="logotype-wrapper" class="logo">
+        <a href="index.html"><img src="img/safer_space_LOGO.svg" alt="Safer Space logo"></a>
+      </div>
+      <ul class="menu">
+        <li><a class="menuItem" href="instruction.html">Nærkontakt</a></li>
+        <li><a class="menuItem" href="register.html">Indberet</a></li>
+        <li class="theme-toggle-item">
+          <button id="theme-toggle" class="theme-switch" type="button" role="switch" aria-checked="false"
+            aria-label="Skift mellem light og dark mode">
+            <span class="theme-switch-track" aria-hidden="true">
+              <span class="theme-switch-thumb"></span>
+            </span>
+            <span class="theme-switch-text">Dark mode</span>
+          </button>
+        </li>
+      </ul>
+      <button class="burger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <h1>INDBERET</h1>
+    <section id="form-section">
+      <article id="form-info">
+        <h2>Indberetning</h2>
+        <p>
+          Brug formularen til at indberette en hændelse, søge støtte eller gøre opmærksom på en situation, der har
+          påvirket din tryghed. Du bestemmer selv, hvor meget du vil dele.
+        </p>
+
+        <p>
+          Formålet er at gøre det lettere at reagere, følge op og skabe et tryggere miljø for alle.
+        </p>
+      </article>
+
+      <form id="webform">
+        <div class="form-group">
+          <label for="fullname">Navn *</label>
+          <input type="text" id="fullname" name="fullname" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Telefon</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+
+        <div class="form-group">
+          <label for="incident-type">Type af hændelse *</label>
+          <select id="incident-type" name="incident-type" required>
+            <option value="">Vælg en type</option>
+            <option value="nærkontakt">Nærkontakt</option>
+            <option value="ubehag">Ubehagelig oplevelse</option>
+            <option value="grænseoverskridende">Grænseoverskridende adfærd</option>
+            <option value="andet">Andet</option>
+          </select>
+        </div>
+
+        <fieldset class="form-group">
+          <legend>Hvor alvorlig var hændelsen? *</legend>
+
+          <label for="severity-low">
+            <input type="radio" id="severity-low" name="severity" value="Lav" required />
+            Lav
+          </label>
+
+          <label for="severity-medium">
+            <input type="radio" id="severity-medium" name="severity" value="Middel" />
+            Middel
+          </label>
+
+          <label for="severity-high">
+            <input type="radio" id="severity-high" name="severity" value="Høj" />
+            Høj
+          </label>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>Hvad ønsker du hjælp til?</legend>
+
+          <label for="help-talk">
+            <input type="checkbox" id="help-talk" name="help" value="Samtale" />
+            Samtale
+          </label>
+
+          <label for="help-followup">
+            <input type="checkbox" id="help-followup" name="help" value="Opfølgning" />
+            Opfølgning
+          </label>
+
+          <label for="help-support">
+            <input type="checkbox" id="help-support" name="help" value="Tryghed/støtte" />
+            Tryghed/støtte
+          </label>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="date">Dato for hændelse *</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+
+        <div class="form-group">
+          <label for="location">Sted</label>
+          <input type="text" id="location" name="location" />
+        </div>
+
+        <div class="form-group">
+          <label for="comment">Beskriv hændelsen *</label>
+          <textarea id="comment" name="comment" rows="6" required></textarea>
+        </div>
+
+        <!-- FORM AND ERR. -->
+
+        <p class="form-note">
+          Din indberetning bruges til at forstå situationen bedre og tage den alvorligt. Del kun det, du er tryg ved at
+          skrive.
+        </p>
+
+        <p id="form-errors" class="form-errors" aria-live="polite"></p>
+
+        <button type="submit">Indberet</button>
+      </form>
+    </section>
+    <section id="form-summary">
+      <h2>Summary</h2>
+      <article>
+        <p class="placeholder">
+          Her vises en opsummering af din indberetning, mens formularen udfyldes.
+        </p>
+      </article>
+    </section>
+
+  </main>
+  <footer>
+    <nav aria-label="Footer navigation">
+      <ul>
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="instruction.html">Instruktioner</a></li>
+        <li><a href="register.html">Indberetning</a></li>
+      </ul>
+
+      <ul>
+        <li><a href="instruction.html#won">Infografik</a></li>
+        <li><a href="instruction.html#ringtone">Kropsområder</a></li>
+        <li><a href="instruction.html#efficiency">Tegn på overdosis</a></li>
+      </ul>
+
+      <ul>
+        <li><a href="register.html#webform">Få hjælp</a></li>
+        <li><a href="register.html#form-summary">Opsummering</a></li>
+        <li><a href="register.html#form-section">Kontakt / indberet</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+
+<script src="js/burger.js"></script>
+<script src="js/form.js"></script>
+<script src="js/main.js"></script>
+<script src="js/theme.js"></script>
+
+</html>
