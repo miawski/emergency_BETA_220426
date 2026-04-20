@@ -60,6 +60,11 @@
 
   /* Infographics background colors*/
   --color-info-bg: #67573c;
+
+  /* new variable for "DARK/LIGHT NODE" */
+  --color-field-bg: #f3f1ea;
+  --color-field-text: #000000;
+  --color-field-border: #4b4545;
 }
 
 :root[data-theme="dark"] {
@@ -99,4 +104,9 @@
 
   /* Infographics background colors */
   --color-info-bg: #1b1918;
+
+  /* DARK MODE VARIABLES */
+  --color-field-bg: #f3f1ea;
+  --color-field-text: #000000;
+  --color-field-border: #4b4545;
 }

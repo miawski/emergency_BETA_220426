@@ -4,6 +4,20 @@
   box-sizing: border-box;
 }
 
+:root[data-theme="dark"]
+  .theme-switch[aria-checked="true"]
+  .theme-switch-track {
+  background-color: var(--color-link-active);
+  border-color: var(--color-link-active);
+}
+
+:root[data-theme="dark"]
+  .theme-switch[aria-checked="true"]:hover
+  .theme-switch-track {
+  background-color: var(--color-link-hover);
+  border-color: var(--color-link-hover);
+}
+
 body,
 button,
 input,

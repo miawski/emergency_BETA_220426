@@ -47,6 +47,7 @@
 .accordion-steps {
   display: grid;
   gap: 0.75rem;
+  margin-bottom: 2rem;
 }
 
 .accordion-steps details {
@@ -73,14 +74,27 @@
   margin: 0;
 }
 
+.under_instructions {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
 /*  */
 
 .info-box {
-  padding: 1.5rem 1rem 0.5rem 1rem;
-  background-color: var(--color-card-bg);
+  padding: 1.25rem 1rem 1rem 1rem;
+  border-radius: var(--border-radius);
 }
-.info-box:nth-of-type(2n) {
-  background-color: var(--color-card-bg-inverted);
+
+#efficiency {
+  background-color: var(--color-link-bg);
+  color: #000000;
+}
+
+#requirement {
+  background-color: var(--color-menu-bg);
+  color: var(--color-text-inverted);
 }
 
 /* Awabs custom infographix */

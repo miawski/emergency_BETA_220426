@@ -90,3 +90,30 @@
   content: "\2192";
   margin-left: 1rem;
 }
+
+/* additional for index.html */
+
+#frontpage .frontpage-copy-card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+#frontpage .frontpage-copy-card--accent {
+  background-color: var(--color-card-bg-inverted);
+}
+
+#frontpage .frontpage-copy-card p {
+  margin: 0;
+  max-width: none;
+}
+
+#frontpage .frontpage-copy-card h2 {
+  margin: 0;
+  line-height: 3rem;
+  text-align: center;
+  background-color: var(--color-headline-bg);
+  color: var(--color-text);
+}
