@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -22,11 +22,11 @@
         <a href="index.html"><img src="img/safer_space_LOGO.svg" alt="Safer Space logo"></a>
       </div>
       <ul class="menu">
-        <li><a class="menuItem" href="instruction.html">Nærkontakt</a></li>
-        <li><a class="menuItem" href="register.html">Indberet</a></li>
+        <li><a class="menuItem" href="instruction.html">Instructions</a></li>
+        <li><a class="menuItem" href="register.html">Report</a></li>
         <li class="theme-toggle-item">
           <button id="theme-toggle" class="theme-switch" type="button" role="switch" aria-checked="false"
-            aria-label="Skift mellem light og dark mode">
+            aria-label="Switch between light and dark mode">
             <span class="theme-switch-track" aria-hidden="true">
               <span class="theme-switch-thumb"></span>
             </span>
@@ -44,21 +44,41 @@
 
   <main>
 
-    <h1>INSTRUKTION</h1>
+    <h1>INSTRUCTIONS</h1>
 
 
     <div class="infographic-info">
-      <h2>Hvad skal du gøre?</h2>
+      <h2>What should you do?</h2>
       <p>
-        Infografikken viser de vigtigste tegn på opioid-overdosis og de vigtigste steder på kroppen, du skal reagere på.
-        Tryk på de markerede områder for at se, hvad du skal kigge efter. (infografikken er vejledende)
+        The infographic shows the most important signs of an opioid overdose and the most important areas of the body
+        you should react to. Click the marked areas to see what to look for. (The infographic is for guidance.)
       </p>
 
-      <p><button id="ringtone" type="button">Klik her for at belyse infografikken</button></p>
+      <p><button id="ringtone" type="button">Click here to highlight the infographic</button></p>
 
+
+      <!-- infographic buttons -->
+      <div class="buttons-wrapper" aria-label="Body part controls">
+        <button type="button" id="btn_head" aria-controls="won" aria-pressed="false">
+          Head
+        </button>
+
+        <button type="button" id="btn_chest" aria-controls="won" aria-pressed="false">
+          Chest
+        </button>
+
+        <button type="button" id="btn_lips" aria-controls="won" aria-pressed="false">
+          Lips
+        </button>
+
+        <button type="button" id="btn_reset" aria-controls="won">
+          Reset
+        </button>
+      </div>
+      <!--  -->
       <section id="won" class="info-graphic">
 
-        <p>klik et sted på kroppen, for at interagere</p>
+        <p>Click on a part of the body to interact</p>
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.79 206.32">
           <defs>
@@ -132,41 +152,45 @@
 
 
     <section class="info-text">
-      <h2>Sådan hjælper du</h2>
+      <h2>
+        <h2>How to help</h2>
+      </h2>
       <div>
         <article class="accordion-steps">
           <details name="emergency-steps" open>
-            <summary>1. Se efter tegn</summary>
+            <summary>1. Look for signs</summary>
             <div class="accordion-content">
-              <p>Bevidstløshed, svag eller ingen vejrtrækning, blå læber eller negle, små pupiller.</p>
+              <p>Unconsciousness, weak or no breathing, blue lips or nails, and very small pupils.</p>
             </div>
           </details>
 
           <details name="emergency-steps">
-            <summary>2. Skab frie luftveje</summary>
+            <summary>2. Clear the airway</summary>
             <div class="accordion-content">
-              <p>Vip hovedet tilbage og åbn munden.</p>
+              <p>Tilt the head back and open the mouth.</p>
             </div>
           </details>
 
           <details name="emergency-steps">
-            <summary>3. Tjek vejrtrækningen</summary>
+            <summary>3. Check the breath/respiration</summary>
             <div class="accordion-content">
-              <p>Tjek vejrtrækningen og om brystkassen bevæger sig.</p>
+              <p>Check the breathing and whether the chest is moving.</p>
             </div>
           </details>
 
           <details name="emergency-steps">
-            <summary>4. Ring 1-1-2 og giv Antidote</summary>
+            <summary>4. Call 1-1-2 and give Antidote</summary>
             <div class="accordion-content">
-              <p>Ring 1-1-2 og giv Antidote næsespray i næseboret.</p>
+              <p>Call 1-1-2 and give Antidote nose spray in the nose hole.</p>
             </div>
           </details>
 
           <details name="emergency-steps">
-            <summary>5. Læg personen i sideleje</summary>
+            <summary>5. Place the person on the side</summary>
             <div class="accordion-content">
-              <p>Hvis personen trækker vejret normalt, læg personen i sideleje.</p>
+              <p>
+                If the person is breathing properly, place the person on the side.
+              </p>
             </div>
           </details>
         </article>
@@ -174,43 +198,40 @@
 
       <div class="under_instructions">
         <aside id="efficiency" class="info-box">
-          <strong>Tegn på overdosis</strong><br>
-          Bevidstløshed, ingen eller svag vejrtrækning, blå læber eller negle og meget små pupiller.
+          <strong>An overdose sign</strong><br>
+
+          unconciousness, no or weak respiration, blue lips or blue nails and very small pupils
+
         </aside>
         <aside id="requirement" class="info-box">
-          <strong>Hurtig handling</strong><br>
-          Frie luftveje. Tjek vejrtrækning. Ring 1-1-2. Giv næsespray. Læg i sideleje hvis personen trækker vejret
-          normalt.
+          <strong>Fast reaction</strong><br>
+
+
+          Open airways. Check respiration. Call 1-1-2. Give nose spray. Lay the person on the side, if they are
+          breathing normally.
         </aside>
       </div>
-
-      <p>
-        Hvis nogen virker utrygge, overvældede eller udsat for grænseoverskridende adfærd, er det vigtigste at reagere
-        roligt, respektfuldt og uden at presse dem. Hjælp i et safer space handler ikke om at overtage situationen, men
-        om
-        at støtte den person, der har brug for hjælp.
-      </p>
     </section>
   </main>
 
   <footer>
     <nav aria-label="Footer navigation">
       <ul>
-        <li><a href="index.html">Forside</a></li>
-        <li><a href="instruction.html">Instruktioner</a></li>
-        <li><a href="register.html">Indberetning</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="instruction.html">Instructions</a></li>
+        <li><a href="register.html">Report</a></li>
       </ul>
 
       <ul>
-        <li><a href="instruction.html#won">Infografik</a></li>
-        <li><a href="instruction.html#ringtone">Kropsområder</a></li>
-        <li><a href="instruction.html#efficiency">Tegn på overdosis</a></li>
+        <li><a href="instruction.html#won">Infographic</a></li>
+        <li><a href="instruction.html#ringtone">Body areas</a></li>
+        <li><a href="instruction.html#efficiency">Signs of overdose</a></li>
       </ul>
 
       <ul>
-        <li><a href="register.html#webform">Få hjælp</a></li>
-        <li><a href="register.html#form-summary">Opsummering</a></li>
-        <li><a href="register.html#form-section">Kontakt / indberet</a></li>
+        <li><a href="register.html#webform">Get help</a></li>
+        <li><a href="register.html#form-summary">Summary</a></li>
+        <li><a href="register.html#form-section">Report</a></li>
       </ul>
     </nav>
   </footer>

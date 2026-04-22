@@ -16,6 +16,43 @@
   max-width: min(100%, 32rem);
 }
 
+/* svg buttons */
+.buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 0.75rem 0;
+}
+
+.buttons-wrapper > button {
+  padding: 5px 12px;
+  border-radius: var(--border-radius-links);
+  border: none;
+  background-color: var(--color-link-bg);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.buttons-wrapper > button:hover {
+  outline: 1px solid #0008;
+  background-color: var(--color-link-hover);
+}
+
+.buttons-wrapper > button:focus-visible {
+  outline: 2px solid black;
+  background-color: var(--color-link-hover);
+}
+
+.buttons-wrapper > button[aria-pressed="true"] {
+  outline: 2px solid black;
+  background-color: var(--color-link-hover);
+}
+
+/*  */
+
 #won svg {
   display: block;
   height: clamp(220px, 34vh, 280px);
@@ -148,7 +185,8 @@
 
 /* clickable parts */
 #head,
-#chest {
+#chest,
+#lips {
   cursor: pointer;
 }
 

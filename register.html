@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -22,11 +22,11 @@
         <a href="index.html"><img src="img/safer_space_LOGO.svg" alt="Safer Space logo"></a>
       </div>
       <ul class="menu">
-        <li><a class="menuItem" href="instruction.html">Nærkontakt</a></li>
-        <li><a class="menuItem" href="register.html">Indberet</a></li>
+        <li><a class="menuItem" href="instruction.html">Instructions</a></li>
+        <li><a class="menuItem" href="register.html">Report</a></li>
         <li class="theme-toggle-item">
           <button id="theme-toggle" class="theme-switch" type="button" role="switch" aria-checked="false"
-            aria-label="Skift mellem light og dark mode">
+            aria-label="Switch between light and dark mode">
             <span class="theme-switch-track" aria-hidden="true">
               <span class="theme-switch-thumb"></span>
             </span>
@@ -43,117 +43,117 @@
   </header>
 
   <main>
-    <h1>INDBERET</h1>
+    <h1>REPORT</h1>
     <section id="form-section">
       <article id="form-info">
-        <h2>Indberetning</h2>
+        <h2>Report an incident</h2>
         <p>
-          Brug formularen til at indberette en hændelse, søge støtte eller gøre opmærksom på en situation, der har
-          påvirket din tryghed. Du bestemmer selv, hvor meget du vil dele.
+          Use the form to report an incident, ask for support, or make others aware of a situation that has
+          affected your sense of safety. You decide how much you want to share.
         </p>
 
         <p>
-          Formålet er at gøre det lettere at reagere, følge op og skabe et tryggere miljø for alle.
+          The purpose is to make it easier to respond, follow up, and create a safer environment for everyone.
         </p>
       </article>
 
       <form id="webform">
         <div class="form-group">
-          <label for="fullname">Navn *</label>
+          <label for="fullname">Name *</label>
           <input type="text" id="fullname" name="fullname" required />
         </div>
 
         <div class="form-group">
-          <label for="email">E-mail *</label>
+          <label for="email">Email *</label>
           <input type="email" id="email" name="email" required />
         </div>
 
         <div class="form-group">
-          <label for="phone">Telefon</label>
+          <label for="phone">Phone</label>
           <input type="tel" id="phone" name="phone" />
         </div>
 
         <div class="form-group">
-          <label for="incident-type">Type af hændelse *</label>
+          <label for="incident-type">Type of incident *</label>
           <select id="incident-type" name="incident-type" required>
-            <option value="">Vælg en type</option>
-            <option value="nærkontakt">Nærkontakt</option>
-            <option value="ubehag">Ubehagelig oplevelse</option>
-            <option value="grænseoverskridende">Grænseoverskridende adfærd</option>
-            <option value="andet">Andet</option>
+            <option value="">Choose a type</option>
+            <option value="close-contact">Close contact</option>
+            <option value="discomfort">Uncomfortable experience</option>
+            <option value="boundary-crossing">Boundary-crossing behaviour</option>
+            <option value="other">Other</option>
           </select>
         </div>
 
         <fieldset class="form-group">
-          <legend>Hvor alvorlig var hændelsen? *</legend>
+          <legend>How serious was the incident? *</legend>
 
           <label for="severity-low">
-            <input type="radio" id="severity-low" name="severity" value="Lav" required />
-            Lav
+            <input type="radio" id="severity-low" name="severity" value="Low" required />
+            Low
           </label>
 
           <label for="severity-medium">
-            <input type="radio" id="severity-medium" name="severity" value="Middel" />
-            Middel
+            <input type="radio" id="severity-medium" name="severity" value="Medium" />
+            Medium
           </label>
 
           <label for="severity-high">
-            <input type="radio" id="severity-high" name="severity" value="Høj" />
-            Høj
+            <input type="radio" id="severity-high" name="severity" value="High" />
+            High
           </label>
         </fieldset>
 
         <fieldset class="form-group">
-          <legend>Hvad ønsker du hjælp til?</legend>
+          <legend>What kind of help do you need?</legend>
 
           <label for="help-talk">
-            <input type="checkbox" id="help-talk" name="help" value="Samtale" />
-            Samtale
+            <input type="checkbox" id="help-talk" name="help" value="Conversation" />
+            Conversation
           </label>
 
           <label for="help-followup">
-            <input type="checkbox" id="help-followup" name="help" value="Opfølgning" />
-            Opfølgning
+            <input type="checkbox" id="help-followup" name="help" value="Follow-up" />
+            Follow-up
           </label>
 
           <label for="help-support">
-            <input type="checkbox" id="help-support" name="help" value="Tryghed/støtte" />
-            Tryghed/støtte
+            <input type="checkbox" id="help-support" name="help" value="Safety/support" />
+            Safety/support
           </label>
         </fieldset>
 
         <div class="form-group">
-          <label for="date">Dato for hændelse *</label>
+          <label for="date">Date of incident *</label>
           <input type="date" id="date" name="date" required />
         </div>
 
         <div class="form-group">
-          <label for="location">Sted</label>
+          <label for="location">Location</label>
           <input type="text" id="location" name="location" />
         </div>
 
         <div class="form-group">
-          <label for="comment">Beskriv hændelsen *</label>
+          <label for="comment">Describe the incident *</label>
           <textarea id="comment" name="comment" rows="6" required></textarea>
         </div>
 
         <!-- FORM AND ERR. -->
 
         <p class="form-note">
-          Din indberetning bruges til at forstå situationen bedre og tage den alvorligt. Del kun det, du er tryg ved at
-          skrive.
+          Your report is used to understand the situation better and take it seriously. Only share what you feel
+          comfortable writing.
         </p>
 
         <p id="form-errors" class="form-errors" aria-live="polite"></p>
 
-        <button type="submit">Indberet</button>
+        <button type="submit">Report</button>
       </form>
     </section>
     <section id="form-summary">
       <h2>Summary</h2>
       <article>
         <p class="placeholder">
-          Her vises en opsummering af din indberetning, mens formularen udfyldes.
+          A live summary of your report will appear here while you fill out the form.
         </p>
       </article>
     </section>
@@ -162,21 +162,21 @@
   <footer>
     <nav aria-label="Footer navigation">
       <ul>
-        <li><a href="index.html">Forside</a></li>
-        <li><a href="instruction.html">Instruktioner</a></li>
-        <li><a href="register.html">Indberetning</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="instruction.html">Instructions</a></li>
+        <li><a href="register.html">Report</a></li>
       </ul>
 
       <ul>
-        <li><a href="instruction.html#won">Infografik</a></li>
-        <li><a href="instruction.html#ringtone">Kropsområder</a></li>
-        <li><a href="instruction.html#efficiency">Tegn på overdosis</a></li>
+        <li><a href="instruction.html#won">Infographic</a></li>
+        <li><a href="instruction.html#ringtone">Body areas</a></li>
+        <li><a href="instruction.html#efficiency">Signs of overdose</a></li>
       </ul>
 
       <ul>
-        <li><a href="register.html#webform">Få hjælp</a></li>
-        <li><a href="register.html#form-summary">Opsummering</a></li>
-        <li><a href="register.html#form-section">Kontakt / indberet</a></li>
+        <li><a href="register.html#webform">Get help</a></li>
+        <li><a href="register.html#form-summary">Summary</a></li>
+        <li><a href="register.html#form-section">Report</a></li>
       </ul>
     </nav>
   </footer>
