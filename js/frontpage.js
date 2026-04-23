@@ -1,20 +1,43 @@
-const scrollTrigger = document.querySelector(".frontpage-scroll");
+const scrollButtons = document.querySelectorAll(".frontpage-scroll");
 const revealItems = document.querySelectorAll("#frontpage .reveal");
 const youtubePlayerFrame = document.querySelector("#frontpage-youtube-player");
-const frontpageSections = Array.from(
-  document.querySelectorAll("#frontpage main > section"),
+const pageHeader = document.querySelector("header");
+const pageSections = Array.from(document.querySelectorAll("main > *")).filter(
+  (section) => section.tagName !== "H1",
 );
-const frontpageHeader = document.querySelector("#frontpage header");
 
 let frontpageYoutubePlayer = null;
 
-function scrollToNextFrontpageSection() {
-  if (!frontpageSections.length) return;
+function atPageBottom() {
+  return (
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 16
+  );
+}
 
-  const headerHeight = frontpageHeader ? frontpageHeader.offsetHeight : 0;
+function updateScrollButtons() {
+  const bottom = atPageBottom();
+
+  scrollButtons.forEach((button) => {
+    button.textContent = bottom ? "Back to top" : "Scroll to content";
+    button.classList.toggle("is-top", bottom);
+    button.setAttribute(
+      "aria-label",
+      bottom ? "Back to top" : "Scroll to next section",
+    );
+  });
+}
+
+function scrollPage() {
+  const headerHeight = pageHeader ? pageHeader.offsetHeight : 0;
+
+  if (atPageBottom()) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+
   const currentMarker = window.scrollY + headerHeight + 24;
-
-  const nextSection = frontpageSections.find(
+  const nextSection = pageSections.find(
     (section) => section.offsetTop > currentMarker + 8,
   );
 
@@ -26,9 +49,13 @@ function scrollToNextFrontpageSection() {
   });
 }
 
-if (scrollTrigger) {
-  scrollTrigger.addEventListener("click", scrollToNextFrontpageSection);
-}
+scrollButtons.forEach((button) => {
+  button.addEventListener("click", scrollPage);
+});
+
+window.addEventListener("scroll", updateScrollButtons, { passive: true });
+window.addEventListener("load", updateScrollButtons);
+updateScrollButtons();
 
 // youtube api
 

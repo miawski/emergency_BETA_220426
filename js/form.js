@@ -39,7 +39,7 @@ function handleSubmit(event) {
   }
 
   updateSummary();
-  summary.innerHTML += `<p><strong>Status:</strong> Indberetning klar til at blive sendt.</p>`;
+  summary.innerHTML += `<p><strong>Status:</strong> Report ready to be sent.</p>`;
 }
 
 function updateSummary() {
@@ -56,34 +56,34 @@ function updateSummary() {
   const comment = formData.get("comment") || "—";
 
   summary.innerHTML = `
-    <h3>Opsummering</h3>
-    <p><strong>Navn:</strong> ${fullname}</p>
-    <p><strong>E-mail:</strong> ${email}</p>
-    <p><strong>Telefon:</strong> ${phone}</p>
-    <p><strong>Type:</strong> ${incidentType}</p>
-    <p><strong>Alvorlighed:</strong> ${severity}</p>
-    <p><strong>Ønskes hjælp til:</strong> ${help}</p>
-    <p><strong>Dato:</strong> ${date}</p>
-    <p><strong>Sted:</strong> ${location}</p>
-    <p><strong>Beskrivelse:</strong> ${comment}</p>
+    <h3>Summary</h3>
+    <p><strong>Name:</strong> ${fullname}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Phone:</strong> ${phone}</p>
+    <p><strong>Incident type:</strong> ${incidentType}</p>
+    <p><strong>Severity:</strong> ${severity}</p>
+    <p><strong>Requested help:</strong> ${help}</p>
+    <p><strong>Date:</strong> ${date}</p>
+    <p><strong>Location:</strong> ${location}</p>
+    <p><strong>Description:</strong> ${comment}</p>
   `;
 }
 
 function getErrorMessage(field) {
   if (field.name === "severity") {
-    return "Vælg hvor alvorlig hændelsen var.";
+    return "Choose how serious the incident was.";
   }
 
   const labelText =
-    field.labels?.[0]?.textContent.replace("*", "").trim() || "Feltet";
+    field.labels?.[0]?.textContent.replace("*", "").trim() || "This field";
 
   if (field.validity.valueMissing) {
-    return `${labelText} skal udfyldes.`;
+    return `${labelText} is required.`;
   }
 
   if (field.validity.typeMismatch && field.type === "email") {
-    return "Indtast en gyldig e-mailadresse.";
+    return "Enter a valid email address.";
   }
 
-  return `${labelText} er ikke udfyldt korrekt.`;
+  return `${labelText} is not filled out correctly.`;
 }

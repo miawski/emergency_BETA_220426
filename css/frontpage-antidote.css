@@ -170,11 +170,13 @@
   background: rgba(255, 255, 255, 0.16);
 }
 
-#frontpage .frontpage-scroll {
+#frontpage .frontpage-scroll,
+#instruction .frontpage-scroll,
+#register .frontpage-scroll {
   position: fixed;
   right: clamp(0.9rem, 3vw, 1.5rem);
   bottom: clamp(0.9rem, 3vw, 1.5rem);
-  z-index: 35;
+  z-index: 50;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(0, 0, 0, 0.72);
   backdrop-filter: blur(6px);
@@ -189,7 +191,9 @@
   animation: frontpageScrollPulse 1.8s ease-in-out infinite;
 }
 
-#frontpage .frontpage-scroll::after {
+#frontpage .frontpage-scroll::after,
+#instruction .frontpage-scroll::after,
+#register .frontpage-scroll::after {
   content: "";
   width: 0.9rem;
   height: 0.9rem;
@@ -651,4 +655,179 @@
   color: #f3efe8;
   border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+/* shared shell for index + instruction + register */
+:is(#frontpage, #instruction, #register) header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 30;
+  backdrop-filter: blur(6px);
+}
+
+:root[data-theme="light"] :is(#frontpage, #instruction, #register) header {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 248, 236, 0.94),
+    rgba(248, 226, 191, 0.78)
+  );
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+:root[data-theme="dark"] :is(#frontpage, #instruction, #register) header {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.42));
+}
+
+:root[data-theme="light"]
+  :is(#frontpage, #instruction, #register)
+  #logotype-wrapper {
+  background: transparent;
+}
+
+:root[data-theme="dark"]
+  :is(#frontpage, #instruction, #register)
+  #logotype-wrapper {
+  background: transparent;
+}
+
+:root[data-theme="light"]
+  :is(#frontpage, #instruction, #register)
+  header
+  nav
+  li
+  a {
+  background: rgba(255, 255, 255, 0.72);
+  color: #141311;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="dark"]
+  :is(#frontpage, #instruction, #register)
+  header
+  nav
+  li
+  a {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f7f1e6;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+:root[data-theme="light"] :is(#frontpage, #instruction, #register) nav a:hover,
+:root[data-theme="light"]
+  :is(#frontpage, #instruction, #register)
+  nav
+  a:focus-visible {
+  background-color: rgba(255, 217, 0, 0.28);
+  color: #141311;
+}
+
+:root[data-theme="dark"] :is(#frontpage, #instruction, #register) nav a:hover,
+:root[data-theme="dark"]
+  :is(#frontpage, #instruction, #register)
+  nav
+  a:focus-visible {
+  background-color: rgba(255, 217, 0, 0.22);
+  color: #ffffff;
+}
+
+:root[data-theme="light"]
+  :is(#frontpage, #instruction, #register)
+  .theme-switch {
+  color: #141311;
+}
+
+:root[data-theme="dark"]
+  :is(#frontpage, #instruction, #register)
+  .theme-switch {
+  color: #f7f1e6;
+}
+
+:root[data-theme="light"]
+  :is(#frontpage, #instruction, #register)
+  .theme-switch-track {
+  background-color: rgba(255, 255, 255, 0.74);
+  border-color: rgba(0, 0, 0, 0.34);
+}
+
+:root[data-theme="dark"]
+  :is(#frontpage, #instruction, #register)
+  .theme-switch-track {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+:root[data-theme="light"] #frontpage .frontpage-hero__eyebrow,
+:root[data-theme="light"] #frontpage .frontpage-kicker {
+  color: #141311;
+}
+
+:root[data-theme="light"] #frontpage .frontpage-scroll,
+:root[data-theme="light"] #instruction .frontpage-scroll,
+:root[data-theme="light"] #register .frontpage-scroll {
+  background: rgba(255, 249, 240, 0.88);
+  border-color: rgba(0, 0, 0, 0.14);
+  color: #141311;
+}
+
+:root[data-theme="dark"] #frontpage .frontpage-scroll,
+:root[data-theme="dark"] #instruction .frontpage-scroll,
+:root[data-theme="dark"] #register .frontpage-scroll {
+  background: rgba(0, 0, 0, 0.72);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #f7f1e6;
+}
+
+:root[data-theme="light"]
+  :is(#frontpage, #instruction, #register)
+  nav.active
+  .menu {
+  background: rgba(255, 249, 240, 0.97);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="dark"]
+  :is(#frontpage, #instruction, #register)
+  nav.active
+  .menu {
+  background: rgba(0, 0, 0, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* stronger visible styling for instruction + register */
+:is(#instruction, #register) {
+  background:
+    radial-gradient(circle at top, rgba(255, 217, 0, 0.08), transparent 24%),
+    var(--color-bg);
+}
+
+:is(#instruction, #register) main {
+  padding-top: 6.25rem;
+  padding-bottom: 2rem;
+  row-gap: 1.25rem;
+}
+
+:root[data-theme="light"] #instruction :is(.infographic-info, .info-text),
+:root[data-theme="light"] #register :is(#form-section, #form-summary) {
+  background: rgba(255, 255, 255, 0.72);
+  color: #141311;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+:root[data-theme="dark"] #instruction :is(.infographic-info, .info-text),
+:root[data-theme="dark"] #register :is(#form-section, #form-summary) {
+  background: #11100f;
+  color: #f3efe8;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+/* back to top arrow */
+
+#frontpage .frontpage-scroll.is-top::after,
+#instruction .frontpage-scroll.is-top::after,
+#register .frontpage-scroll.is-top::after {
+  transform: rotate(225deg);
 }
