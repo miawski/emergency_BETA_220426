@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/burger.css">
   <link rel="stylesheet" href="css/cards.css">
   <link rel="stylesheet" href="css/infographic.css">
+  <link rel="stylesheet" href="css/frontpage-antidote.css">
   <link rel="icon" type="image/svg+xml" href="img/safer_space_LOGO.svg">
   <title>Emergency Site</title>
 </head>
@@ -46,37 +47,89 @@
   </header>
 
   <main>
-    <h1>SAFER_SPACE</h1>
+    <section class="frontpage-hero" aria-label="Safer Space front page hero">
 
-    <section class="frontpage-copy-card">
-      <p>
-        SAFER SPACE is about creating a safer environment for everyone. There is no room for harassment, discrimination,
-        boundary-crossing behaviour or unwanted attention. A safer space is built on respect, consent and shared
-        responsibility.
-      </p>
+
+      <div class="frontpage-hero__overlay" aria-hidden="true"></div>
+
+      <div class="frontpage-hero__content reveal is-visible">
+        <p class="frontpage-hero__eyebrow">Safer Space</p>
+        <h1>Emergency guidance for safer events</h1>
+        <p class="frontpage-hero__lead">
+          Quick access to instructions, overdose response guidance and incident reporting.
+        </p>
+
+        <div class="frontpage-hero__actions">
+          <a class="cta_btn" href="instruction.html">Open instructions</a>
+          <a class="cta_btn cta_btn--ghost" href="register.html">Open report form</a>
+        </div>
+      </div>
+
+      <button class="frontpage-scroll" type="button" aria-label="Scroll to content">
+        Scroll to content
+      </button>
     </section>
 
-    <div class="safer_img">
-      <section>
-        <img src="img/safer_space_LOGO.svg" alt="Safer Space logo">
-      </section>
-    </div>
-
-    <section class="frontpage-copy-card">
-      <p>
-        No one can promise a completely safe space, but we can actively work to make it safer. That means guests,
-        crew and organisers help look after each other and take uncomfortable situations seriously.
-      </p>
+    <section id="frontpage-intro" class="frontpage-panel frontpage-panel--dark reveal">
+      <div class="frontpage-panel__inner">
+        <p class="frontpage-kicker">Start here</p>
+        <h2>See it. React. Help each other.</h2>
+        <p>
+          SAFER SPACE is about creating a safer environment for everyone. There is no room for harassment,
+          discrimination, boundary-crossing behaviour or unwanted attention.
+        </p>
+        <p>
+          No one can promise a completely safe space, but guests, crew and organisers can actively work to
+          make it safer by taking warning signs and uncomfortable situations seriously.
+        </p>
+      </div>
     </section>
 
-    <section class="frontpage-copy-card frontpage-copy-card--accent">
-      <h2>What does Safer Space mean?</h2>
-      <p>
-        A safer space is an environment where everyone should be able to be present without fear of discrimination,
-        unwanted touching, offensive comments or boundary-crossing behaviour.
-      </p>
+    <section class="frontpage-video reveal" aria-label="Antidote reference video">
+      <div class="frontpage-video__inner">
+        <div class="frontpage-video__frame">
+          <iframe id="frontpage-youtube-player"
+            src="https://www.youtube.com/embed/YxNh5tQUQWQ?enablejsapi=1&playsinline=1&rel=0&cc_load_policy=1&cc_lang_pref=en&hl=en"
+            title="Antidote overdose response video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
     </section>
 
+    <section class="frontpage-split reveal" aria-label="Main actions">
+      <div class="frontpage-split__inner">
+        <article class="frontpage-card">
+          <h3>Instructions</h3>
+          <p>
+            Go straight to the emergency guidance page to understand the infographic, the body areas and the
+            key response steps.
+          </p>
+          <a class="cta_btn" href="instruction.html">View instructions</a>
+        </article>
+
+        <article class="frontpage-card">
+          <h3>Report</h3>
+          <p>
+            Use the report page when something has happened and you need to document it clearly and get help
+            or follow-up.
+          </p>
+          <a class="cta_btn" href="register.html">Go to report form</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="frontpage-panel frontpage-panel--accent reveal">
+      <div class="frontpage-panel__inner">
+        <p class="frontpage-kicker">What this means</p>
+        <h2>What does Safer Space mean?</h2>
+        <p>
+          A safer space is an environment where everyone should be able to be present without fear of
+          discrimination, unwanted touching, offensive comments or boundary-crossing behaviour.
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -104,6 +157,7 @@
 </body>
 
 <script src="js/burger.js"></script>
+<script src="js/frontpage.js"></script>
 <script src="js/theme.js"></script>
 
 </html>

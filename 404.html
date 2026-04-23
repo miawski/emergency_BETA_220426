@@ -4,14 +4,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/burger.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/frontpage-antidote.css">
   <link rel="icon" type="image/svg+xml" href="img/safer_space_LOGO.svg">
-  <title>404 - Side ikke fundet</title>
+  <title>404 — Page not found</title>
 </head>
 
-<body>
-  <h1>404 - Side ikke fundet</h1>
-  <p>Beklager, siden du leder efter, kunne ikke findes.</p>
-  <a href="/index.html">Gå tilbage til forsiden</a>
-</body>
+<header>
+  <nav>
+    <div id="logotype-wrapper" class="logo">
+      <a href="index.html"><img src="img/safer_space_LOGO.svg" alt="Safer Space logo"></a>
+    </div>
+
+    <ul class="menu">
+      <li><a class="menuItem" href="instruction.html">Instructions</a></li>
+      <li><a class="menuItem" href="register.html">Report</a></li>
+      <li class="theme-toggle-item">
+        <button id="theme-toggle" class="theme-switch" type="button" role="switch" aria-checked="false"
+          aria-label="Switch between light and dark mode">
+          <span class="theme-switch-track" aria-hidden="true">
+            <span class="theme-switch-thumb"></span>
+          </span>
+          <span class="theme-switch-text">Dark mode</span>
+        </button>
+      </li>
+    </ul>
+
+    <button class="burger">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="not-found-panel">
+    <h1>404 — Page not found</h1>
+    <p>
+      Sorry, the page you were trying to open could not be found.
+    </p>
+    <p>
+      Use one of the links below to return to the site.
+    </p>
+
+    <div class="not-found-actions">
+      <a class="cta_btn" href="index.html">Go to homepage</a>
+      <a class="cta_btn" href="instruction.html">Open instructions</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer-antidote" role="contentinfo">
+  <div class="site-footer-antidote__inner">
+    <div class="site-footer-antidote__widgets">
+      <section class="site-footer-antidote__column">
+        <h3>Navigate</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="instruction.html">Instructions</a></li>
+          <li><a href="register.html">Report</a></li>
+        </ul>
+      </section>
+
+      <section class="site-footer-antidote__column">
+        <h3>Instructions</h3>
+        <ul>
+          <li><a href="instruction.html#won">Infographic</a></li>
+          <li><a href="instruction.html#ringtone">Body areas</a></li>
+          <li><a href="instruction.html#efficiency">Signs of overdose</a></li>
+        </ul>
+      </section>
+
+      <section class="site-footer-antidote__column">
+        <h3>Report &amp; support</h3>
+        <ul>
+          <li><a href="register.html#webform">Get help</a></li>
+          <li><a href="register.html#form-summary">Summary</a></li>
+          <li><a href="register.html#form-section">Report</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="site-footer-antidote__separator" aria-hidden="true"></div>
+
+    <div class="site-footer-antidote__info">
+      <p class="site-footer-antidote__copyright">Copyright © 2026 — SAFER SPACE</p>
+      <p class="site-footer-antidote__meta">Emergency guidance and reporting</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/burger.js"></script>
+<script src="js/theme.js"></script>
 
 </html>
