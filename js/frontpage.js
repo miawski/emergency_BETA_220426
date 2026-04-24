@@ -2,51 +2,102 @@ const scrollButtons = document.querySelectorAll(".frontpage-scroll");
 const revealItems = document.querySelectorAll("#frontpage .reveal");
 const youtubePlayerFrame = document.querySelector("#frontpage-youtube-player");
 const pageHeader = document.querySelector("header");
-const pageSections = Array.from(document.querySelectorAll("main > *")).filter(
-  (section) => section.tagName !== "H1",
+const pageFooter = document.querySelector("footer");
+const pageId = document.body?.id || "";
+
+const frontpageSections = Array.from(
+  document.querySelectorAll("#frontpage main > section"),
 );
+
+const finalFrontpageSection =
+  frontpageSections[frontpageSections.length - 1] || null;
 
 let frontpageYoutubePlayer = null;
 
-function atPageBottom() {
-  return (
-    window.innerHeight + window.scrollY >=
-    document.documentElement.scrollHeight - 16
+function maxScrollY() {
+  return Math.max(
+    0,
+    document.documentElement.scrollHeight - window.innerHeight,
   );
 }
 
+function atPageBottom() {
+  return window.scrollY >= maxScrollY() - 24;
+}
+
+function footerOffset() {
+  if (!pageFooter) return 24;
+
+  const footerRect = pageFooter.getBoundingClientRect();
+  const overlap = window.innerHeight - footerRect.top + 16;
+
+  return Math.max(24, overlap);
+}
+
+function isTopMode() {
+  if (pageId === "frontpage" && finalFrontpageSection) {
+    const rect = finalFrontpageSection.getBoundingClientRect();
+    return rect.top < window.innerHeight - 120;
+  }
+
+  return atPageBottom();
+}
+
 function updateScrollButtons() {
-  const bottom = atPageBottom();
+  const topMode = isTopMode();
+  const bottomPx = footerOffset();
 
   scrollButtons.forEach((button) => {
-    button.textContent = bottom ? "Back to top" : "Scroll to content";
-    button.classList.toggle("is-top", bottom);
+    button.textContent = topMode ? "Back to top" : "Scroll to content";
+    button.classList.toggle("is-top", topMode);
     button.setAttribute(
       "aria-label",
-      bottom ? "Back to top" : "Scroll to next section",
+      topMode ? "Back to top" : "Scroll to next content section",
     );
+    button.style.bottom = `${bottomPx}px`;
+  });
+}
+
+function scrollFrontpage() {
+  const headerHeight = pageHeader ? pageHeader.offsetHeight : 0;
+  const currentMarker = window.scrollY + headerHeight + 24;
+
+  const nextSection = frontpageSections.find(
+    (section) => section.offsetTop > currentMarker + 8,
+  );
+
+  const targetTop = nextSection
+    ? nextSection.offsetTop - headerHeight - 16
+    : maxScrollY();
+
+  window.scrollTo({
+    top: Math.min(maxScrollY(), Math.max(0, targetTop)),
+    behavior: "smooth",
+  });
+}
+
+function scrollStepPage() {
+  const step = Math.max(260, Math.round(window.innerHeight * 0.72));
+  const targetTop = Math.min(maxScrollY(), window.scrollY + step);
+
+  window.scrollTo({
+    top: targetTop,
+    behavior: "smooth",
   });
 }
 
 function scrollPage() {
-  const headerHeight = pageHeader ? pageHeader.offsetHeight : 0;
-
-  if (atPageBottom()) {
+  if (isTopMode()) {
     window.scrollTo({ top: 0, behavior: "smooth" });
     return;
   }
 
-  const currentMarker = window.scrollY + headerHeight + 24;
-  const nextSection = pageSections.find(
-    (section) => section.offsetTop > currentMarker + 8,
-  );
+  if (pageId === "frontpage") {
+    scrollFrontpage();
+    return;
+  }
 
-  const targetTop = nextSection ? nextSection.offsetTop - headerHeight - 16 : 0;
-
-  window.scrollTo({
-    top: Math.max(0, targetTop),
-    behavior: "smooth",
-  });
+  scrollStepPage();
 }
 
 scrollButtons.forEach((button) => {
@@ -54,6 +105,7 @@ scrollButtons.forEach((button) => {
 });
 
 window.addEventListener("scroll", updateScrollButtons, { passive: true });
+window.addEventListener("resize", updateScrollButtons);
 window.addEventListener("load", updateScrollButtons);
 updateScrollButtons();
 

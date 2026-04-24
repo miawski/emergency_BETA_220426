@@ -831,3 +831,12 @@
 #register .frontpage-scroll.is-top::after {
   transform: rotate(225deg);
 }
+
+/* Desktop only: lift the scroll/back-to-top button above the footer links */
+@media (width > 600px) {
+  #frontpage .frontpage-scroll.is-top,
+  #instruction .frontpage-scroll.is-top,
+  #register .frontpage-scroll.is-top {
+    bottom: calc(clamp(0.9rem, 3vw, 1.5rem) + 7rem);
+  }
+}
