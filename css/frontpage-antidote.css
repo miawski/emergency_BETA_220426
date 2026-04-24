@@ -100,7 +100,7 @@
   width: min(100% - 2rem, 62rem);
   padding: clamp(7rem, 16vh, 10rem) 1rem 6rem;
   text-align: center;
-  color: #f7f1e6;
+  color: #efbe64;
   display: grid;
   gap: 1rem;
 }
@@ -427,7 +427,7 @@
 }
 
 :root[data-theme="light"] #frontpage .frontpage-hero__actions .cta_btn--ghost {
-  background: rgba(20, 19, 17, 0.05);
+  background: rgb(255, 255, 255);
   color: #141311;
   border-color: rgba(0, 0, 0, 0.14);
 }
