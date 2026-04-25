@@ -38,8 +38,9 @@ function finalFrontpageSectionIsVisible() {
   if (!finalFrontpageSection) return false;
 
   const rect = finalFrontpageSection.getBoundingClientRect();
+  const triggerLine = window.innerWidth < 700 ? 120 : window.innerHeight - 120;
 
-  return rect.top < window.innerHeight - 120;
+  return rect.top < triggerLine;
 }
 
 function isTopMode() {
