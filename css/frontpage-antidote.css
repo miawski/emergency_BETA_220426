@@ -840,3 +840,25 @@
     bottom: calc(clamp(0.9rem, 3vw, 1.5rem) + 7rem);
   }
 }
+
+:root[data-theme="light"] #frontpage .frontpage-hero h1 {
+  color: var(--color-accent-yellow);
+}
+
+:root[data-theme="light"] #frontpage .frontpage-hero h1 {
+  color: #ffd900;
+}
+
+:root[data-theme="light"] #frontpage .frontpage-hero__eyebrow,
+:root[data-theme="light"] #frontpage .frontpage-hero__lead {
+  color: #f4a261;
+}
+
+:root[data-theme="light"] #frontpage .frontpage-hero h1 {
+  color: #ffd900;
+}
+
+:root[data-theme="light"] #frontpage .frontpage-hero__content > h2,
+:root[data-theme="light"] #frontpage .frontpage-hero__lead {
+  color: #f4a261;
+}

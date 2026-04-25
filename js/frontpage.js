@@ -34,10 +34,17 @@ function footerOffset() {
   return Math.max(24, overlap);
 }
 
+function finalFrontpageSectionIsVisible() {
+  if (!finalFrontpageSection) return false;
+
+  const rect = finalFrontpageSection.getBoundingClientRect();
+
+  return rect.top < window.innerHeight - 120;
+}
+
 function isTopMode() {
-  if (pageId === "frontpage" && finalFrontpageSection) {
-    const rect = finalFrontpageSection.getBoundingClientRect();
-    return rect.top < window.innerHeight - 120;
+  if (pageId === "frontpage") {
+    return finalFrontpageSectionIsVisible();
   }
 
   return atPageBottom();
@@ -45,7 +52,7 @@ function isTopMode() {
 
 function updateScrollButtons() {
   const topMode = isTopMode();
-  const bottomPx = footerOffset();
+  const bottomPx = topMode ? footerOffset() : 24;
 
   scrollButtons.forEach((button) => {
     button.textContent = topMode ? "Back to top" : "Scroll to content";

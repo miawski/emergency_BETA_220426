@@ -153,3 +153,35 @@ textarea:valid {
     grid-column: 1 / -1;
   }
 }
+
+/* Register page form completion + uniform headings */
+#register #form-info h2,
+#register #form-summary h2 {
+  margin: 0 0 1rem 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  line-height: 0.95;
+  text-align: left;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+#register .form-group--full,
+#register #webform fieldset,
+#register #webform .form-note,
+#register #webform .form-errors,
+#register #webform button {
+  grid-column: 1 / -1;
+}
+
+#register .checkbox-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-weight: 600;
+}
+
+#register .checkbox-line input {
+  margin-top: 0.2rem;
+  flex: 0 0 auto;
+}

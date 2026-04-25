@@ -58,7 +58,7 @@
         </p>
       </article>
 
-      <form id="webform">
+      <form id="webform" aria-label="Safer Space incident report form">
         <div class="form-group">
           <label for="fullname">Name *</label>
           <input type="text" id="fullname" name="fullname" required />
@@ -71,7 +71,17 @@
 
         <div class="form-group">
           <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" />
+          <input type="tel" id="phone" name="phone" autocomplete="tel" />
+        </div>
+
+        <div class="form-group">
+          <label for="contact-method">Preferred contact method</label>
+          <select id="contact-method" name="contact-method">
+            <option value="">Choose contact method</option>
+            <option value="Email">Email</option>
+            <option value="Phone">Phone</option>
+            <option value="No contact needed">No contact needed</option>
+          </select>
         </div>
 
         <div class="form-group">
@@ -129,13 +139,35 @@
         </div>
 
         <div class="form-group">
-          <label for="location">Location</label>
-          <input type="text" id="location" name="location" />
+          <label for="time">Approximate time</label>
+          <input type="time" id="time" name="time" />
         </div>
 
         <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" autocomplete="off" />
+        </div>
+
+        <div class="form-group">
+          <label for="witnesses">Witnesses or people involved</label>
+          <input type="text" id="witnesses" name="witnesses" />
+        </div>
+
+        <div class="form-group form-group--full">
           <label for="comment">Describe the incident *</label>
           <textarea id="comment" name="comment" rows="6" required></textarea>
+        </div>
+
+        <div class="form-group form-group--full">
+          <label for="followup-notes">Anything else we should know?</label>
+          <textarea id="followup-notes" name="followup-notes" rows="4"></textarea>
+        </div>
+
+        <div class="form-group form-group--full">
+          <label for="consent-contact" class="checkbox-line">
+            <input type="checkbox" id="consent-contact" name="consent-contact" value="Yes" required />
+            I understand that this report may be used for follow-up and safer-space response. *
+          </label>
         </div>
 
         <!-- FORM AND ERR. -->
